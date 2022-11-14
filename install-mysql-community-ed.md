@@ -30,3 +30,9 @@ STEP 6. CHECK STATUS OF MYSQL SERVICE
 ```sh
 $ systemctl status mysqld
 ```
+
+### EXTRA TOOLS
+```sh
+$ sudo yum install net-tools
+$ sudo yum install lsof
+```
