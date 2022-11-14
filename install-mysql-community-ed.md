@@ -3,36 +3,42 @@
 ### INSTALLATION STEPS
 STEP 1. DOWNLOAD MYSQL 8 REPOSITORY PACKAGE
 ```sh
-sudo rpm -Uvh https://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
+wget https://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
 ```
 
-STEP 2. DISABLE ALL OTHER MYSQL REPOS
+STEP 2. INSTALL MYSQL REPO LOCALLY
 ```sh
-sudo sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/mysql-community.repo
+sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm
 ```
 
-STEP 3. ENABLE MYSQL 8 REPO AND INSTALL MYSQL SERVER
+STEP 3. Import Public Key for MySQL 8
 ```sh
-sudo yum -y --enablerepo=mysql80-community install mysql-community-server
+sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 ```
 
-STEP 4. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
+STEP 4. INSTALL MYSQL SERVER
 ```sh
-sudo systemctl enable mysqld
+sudo yum install mysql-community-server
 ```
 
-STEP 5. START MYSQL SERVICE
+STEP 5. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
+```sh
+sudo systemctl enable mysqld.service
+```
+
+STEP 6. START MYSQL SERVICE
 ```sh
 sudo systemctl start mysqld.service
 ```
 
-STEP 6. CHECK STATUS OF MYSQL SERVICE
+STEP 7. CHECK STATUS OF MYSQL SERVICE
 ```sh
 systemctl status mysqld
 ```
 
-### EXTRA TOOLS
+### VERIFICATION
 ```sh
-sudo yum install net-tools
-sudo yum install lsof
+pidof mysqld
+netstat -ntlp | grep 3306
+sudo lsof -u mysql
 ```
