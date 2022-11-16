@@ -29,7 +29,7 @@ sudo userdel
 sudo userdel -r mysql
 ```
 
-STEP 6. REMOVE OTHER LEFT OVER FILES
+STEP 6. REMOVE OTHER LEFTOVER FILES
 ```sh
 ls /var/lib
 ls /var/log
