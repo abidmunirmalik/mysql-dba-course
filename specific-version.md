@@ -16,13 +16,13 @@ STEP 3. ENABLE REPO FOR PERCONA MySQL 8
 sudo percona-release setup -y ps80
 ```
 
-STEP 5. SET ENVIRONMENT VARIABLE
+STEP 4. SET ENVIRONMENT VARIABLE
 ```sh
 VERSION=8.0.26-16.1
 echo $VERSION
 ```
 
-STEP 6. INSTALL MYSQL SERVER PACKAGES IN THIS ORDER
+STEP 5. INSTALL MYSQL SERVER PACKAGES IN THIS ORDER
 ```sh
 sudo yum install percona-server-shared-compat-$VERSION.el7.x86_64
 sudo yum install percona-server-shared-$VERSION.el7.x86_64
@@ -30,22 +30,22 @@ sudo yum install percona-server-client-$VERSION.el7.x86_64
 sudo yum install percona-server-server-$VERSION.el7.x86_64
 ```
 
-STEP 7. VERIFY VERSION OF EACH PACKAGE
+STEP 6. VERIFY VERSION OF EACH PACKAGE
 ```sh
 rpm -qa | grep -i percona-server
 ```
 
-STEP 8. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
+STEP 7. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
 ```sh
 sudo systemctl enable mysqld.service
 ```
 
-STEP 9. START MYSQL SERVICE
+STEP 8. START MYSQL SERVICE
 ```sh
 sudo systemctl start mysqld.service
 ```
 
-STEP 10. CHECK STATUS OF MYSQL SERVICE
+STEP 9. CHECK STATUS OF MYSQL SERVICE
 ```sh
 systemctl status mysqld
 ```
