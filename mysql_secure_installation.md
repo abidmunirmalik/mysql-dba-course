@@ -6,7 +6,14 @@ STEP 1. ACCESS ROOT PASSWORD
 sudo grep password /var/log/mysqld.log
 ```
 
-STEP 2. RUN MYSQL_SECURE_INSTALLATION SCRIPT
+STEP 2. SEARCH FOR MYSQL_SECURE_INSTALLATION SCRIPT
+```sh
+which mysql_secure_installation
+file /usr/bin/mysql_secure_installation
+ls -ltr /usr/bin/mysql_secure_installation
+```
+
+STEP 3. RUN MYSQL_SECURE_INSTALLATION SCRIPT
 ```sh
 sudo mysql_secure_installation
 Enter password for user root:
@@ -23,12 +30,12 @@ Success.
 All done!
 ```
 
-STEP 3. LOGIN TO MYSQL AND VERIFY
+STEP 4. LOGIN TO MYSQL AND VERIFY
 ```sh
 mysql --host=localhost --user=root --password
 ```
 
-STEP 4. CHECK MYSQL VERSION
+STEP 5. CHECK MYSQL VERSION
 ```sh
 mysql> SELECT @@hostname, @@server_id, @@version;
 ```
