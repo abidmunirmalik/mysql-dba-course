@@ -1,29 +1,17 @@
 ## MYSQL CONFIG EDITOR
 
-### pidof
-* No installation is needed as this command-line utility is part of Linux 
-
-### netstat 
-* Print network connections, listening tcp ports, etc
+### HELP
 ```sh
-rpm -ql netstat
-sudo yum provides netstat
-sudo yum install net-tools
-man netstat
+mysql_config_editor set --help
 ```
 
-### lsof
-* List all open files by a process
+### CONFIGURE 
 ```sh
-rpm -ql lsof
-sudo yum install lsof
-rpm -qa | grep lsof
-man lsof
+mysql_config_editor set --user=root --login-path=client --password
 ```
 
-### wget
+### VERIFY
 ```sh
-sudo yum install wget
-rpm -ql wget
-man wget
+mysql
+mysql>select user();
 ```
