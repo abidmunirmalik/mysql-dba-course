@@ -1,0 +1,21 @@
+## CREATE DBA USER
+
+### GET HELP
+```sql
+mysql>help create user
+```
+
+### CREATE DBA USER
+```sql
+mysql>CREATE USER IF NOT EXISTS bob IDENTIFIED BY 'xxxxx' PASSWORD EXPIRE NEVER ACCOUNT UNLOCK;
+```
+
+### GRANT PERMISSIONS
+```sql
+mysql>GRANT ALL PRIVILEGES ON *.* TO bob WITH GRANT OPTION;
+```
+
+### FLUSH PRIVILEGES  
+```sql
+mysql>FLUSH PRIVILEGES;
+```
