@@ -35,7 +35,7 @@ CREATE USER IF NOT EXISTS db_admin IDENTIFIED BY 'P@ssw0rd';
 ```sql
 GRANT READER TO db_reader;
 GRANT WRITER to db_writer;
-GRANT ADMIN to db_admin
+GRANT ADMIN to db_admin;
 ```
 
 ### FLUSH PRIVILEGES  
