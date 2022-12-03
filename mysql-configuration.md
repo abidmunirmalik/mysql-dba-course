@@ -21,3 +21,10 @@ sudo cp /etc/my.cnf /etc/mysql/my.cnf
 sudo mv /etc/my.cnf /etc/my.cnf.old
 sudo systemctl restart mysqld
 ```
+
+### START MYSQLD WITH STRACE
+```sh
+sudo systemctl stop mysqld
+sudo strace mysqld
+sudo systemctl stop mysqld
+```
