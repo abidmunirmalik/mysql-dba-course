@@ -28,3 +28,12 @@ sudo systemctl stop mysqld
 sudo strace mysqld
 sudo systemctl stop mysqld
 ```
+
+### OPTION FILE INCLUSION
+```sh
+sudo systemctl stop mysqld
+sudo vi /etc/mysql/my.cnf
+!includedir /etc/percona
+sudo cp /etc/mysql/my.cnf /etc/percona/
+sudo systemctl start mysqld
+```
