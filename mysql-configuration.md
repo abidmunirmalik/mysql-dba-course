@@ -41,9 +41,9 @@ sudo systemctl start mysqld
 ### MOVE DATA DIRECTORY
 ```sh
 sudo systemctl stop mysqld
-sudo mkdir /var/lib/mysql/data
-sudo mv /var/lib/mysql/* /var/lib/mysql/data/
+sudo mkdir /var/lib/mysql/prod
+cd /var/lib/mysql && sudo mv * prod/
 sudo vim /etc/percona/my.cnf
-datdir = /var/lib/myql/data/
+datdir = /var/lib/myql/prod
 sudo systemctl start mysqld
 ```
