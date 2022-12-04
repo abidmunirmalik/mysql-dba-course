@@ -47,3 +47,17 @@ sudo vim /etc/percona/my.cnf
 datdir = /var/lib/myql/prod
 sudo systemctl start mysqld
 ```
+
+### BINARY LOG FILES
+```sql
+SHOW BINARY LOGS;
+SHOW BINLOG EVENTS IN 'binlog.000030';
+PURGE BINARY LOGS TO 'binlog.000030';
+PURGE BINARY LOGS BEFORE '2022-12-22 22:45:00';
+```
+
+### DISABLE BINARY LOGGING
+```sh
+sudo vi /etc/percona/my.cnf
+disable-log-bin
+```
