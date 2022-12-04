@@ -37,3 +37,13 @@ sudo vi /etc/mysql/my.cnf
 sudo cp /etc/mysql/my.cnf /etc/percona/
 sudo systemctl start mysqld
 ```
+
+### MOVE DATA DIRECTORY
+```sh
+sudo systemctl stop mysqld
+sudo mkdir /var/lib/mysql/data
+sudo mv /var/lib/mysql/* /var/lib/mysql/data/
+sudo vim /etc/percona/my.cnf
+datdir = /var/lib/myql/data/
+sudo systemctl start mysqld
+```
