@@ -61,3 +61,12 @@ PURGE BINARY LOGS BEFORE '2022-12-22 22:45:00';
 sudo vi /etc/percona/my.cnf
 disable-log-bin
 ```
+
+### ENABLE BINARY LOGGING
+```sh
+sudo vi /etc/percona/my.cnf
+log-bin = /var/log/mysql/binlogs/prod-binlog
+log-bin-index = /var/log/mysql/binlogs/prod-binlog.index
+sudo systemctl stop mysqld.service
+sudo systemctl start mysqld.service
+```
