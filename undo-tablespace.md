@@ -13,6 +13,8 @@ sudo systemctl stop mysqld.service
 
 ### RECONFIGURE innodb.cnf  
 ```sh
+sudo mv /var/lib/mysql/prod/undo_* /var/lib/mysql/innodb/
+sudo chown -R mysql:mysql /var/lib/mysql
 sudo vim /etc/percona/innodb.cnf
 innodb-undo-directory  =  /var/lib/mysql/innodb
 ```
