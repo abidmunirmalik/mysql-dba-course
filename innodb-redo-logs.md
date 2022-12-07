@@ -44,17 +44,18 @@ sudo systemctl stop mysqld.service
 sudo rm -f /var/lib/mysql/prod/ib_logfile*
 ```
 
+### CHANGE PERMISSIONS
+```sh
+sudo mkdir /var/log/mysql/redologs
+sudo chown -R mysql:mysql /var/log/mysql
+```
+
 ### CONFIGURE REDO LOG FILES
 ```sh
 sudo vim /etc/percona/innodb.cnf
 innodb-log-file-size = 100M
-Innodb-log-files-in-group = 2
+innodb-log-files-in-group = 2
 innodb-log-group-home_dir = /var/log/mysql/redologs
-```
-
-### CHANGE PERMISSIONS
-```sh
-sudo chown -R mysql:mysql /var/log/mysql
 ```
 
 ### RESTART MYSQL  
