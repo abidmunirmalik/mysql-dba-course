@@ -8,6 +8,8 @@ man mysqldump
 ### BACKUP TABLE
 ```sh
 mysqldump world continents > continents.sql
+mysqldump world continents --where="cid=5" > south_america.sql
+mysqldump world --ignore-table=world.continents > no_continent_world.sql
 ```
 
 ### BACKUP DATABASE
