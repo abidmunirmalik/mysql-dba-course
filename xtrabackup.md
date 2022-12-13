@@ -1,4 +1,4 @@
-## INSTALL XTRABACKUP HOT BACKUP TOOL
+## XTRABACKUP HOT BACKUP TOOL
 
 ### INSTALLATION STEPS
 
@@ -21,4 +21,12 @@ sudo yum install percona-xtrabackup-80-8.0.28-20.1.el7
 STEP 4. VERIFY
 ```sh
 rpm -qa | grep -i percona-server
+```
+
+
+### TAKE HOT BACKUP
+```sh
+mysql_config_editor set --user=bob --login-path=client --password
+xtrabackup --backup --target-dir=/var/log/mysql/hotbackup
+xtrabackup --prepare --target-dir=/var/log/mysql/hotbackup
 ```
