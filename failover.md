@@ -21,6 +21,7 @@ systemctl stop mysqld.service
 
 ### CONFIGURE OLD-PRIMARY TO BECOME REPLICA 
 ```sh
+mkdir -p /var/log/mysql/relay
 log-bin           = /var/log/mysql/binlogs/prod01-binlog
 log-bin-index     = /var/log/mysql/binlogs/prod01-binlog.index
 relay-log         = /var/log/mysql/relay/prod01-relay
@@ -32,6 +33,7 @@ skip-replica-start
 
 ### CONFIGURE OLD-REPLICA TO BECOME PRIMARY 
 ```sh
+mkdir -p /var/log/mysql/binlogs
 log-bin           = /var/log/mysql/binlogs/prod02-binlog
 log-bin-index     = /var/log/mysql/binlogs/prod02-binlog.index
 relay-log         = /var/log/mysql/relay/prod02-relay
@@ -60,7 +62,7 @@ systemctl start mysqld.service
 
 ### CONFIGURE OLD-PRIMARY TO BECOME REPLICA
 ```sql
-CHANGE REPLICATION SOURCE TO SOURCE_HOST='', SOURCE_USER='rpelicator', SOURCE_PASSWORD='', SOURCE_AUTO_POSITION=1;
+CHANGE REPLICATION SOURCE TO SOURCE_HOST='', SOURCE_USER='replicator', SOURCE_PASSWORD='', SOURCE_AUTO_POSITION=1;
 SHOW REPLICA STATUS;
 ```
 
