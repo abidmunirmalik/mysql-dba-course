@@ -33,10 +33,10 @@ sudo systemctl stop mysqld
 
 ### INSTALL NEW MINOR VERSION
 ```sh
-sudo yum localinstall percona-server-shared-compat-$VERSION.el7.x86_64
-sudo yum localinstall percona-server-shared-$VERSION.el7.x86_64
-sudo yum localinstall percona-server-client-$VERSION.el7.x86_64
-sudo yum localinstall percona-server-server-$VERSION.el7.x86_64
+sudo yum localinstall percona-server-shared-compat-$VERSION.el7.x86_64.rpm
+sudo yum localinstall percona-server-shared-$VERSION.el7.x86_64.rpm
+sudo yum localinstall percona-server-client-$VERSION.el7.x86_64.rpm
+sudo yum localinstall percona-server-server-$VERSION.el7.x86_64.rpm
 sudo yum localinstall percona-xtrabackup-80-8.0.30-23.1.el7.x86_64.rpm
 ```
 
