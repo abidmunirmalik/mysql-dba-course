@@ -32,6 +32,10 @@ skip-replica-start
 
 ### CONFIGURE OLD-REPLICA TO BECOME PRIMARY 
 ```sh
+mkdir -p /var/log/mysql/binlogs
+```
+edit the replication.cnf file 
+```sh
 log-bin           = /var/log/mysql/binlogs/prod02-binlog
 log-bin-index     = /var/log/mysql/binlogs/prod02-binlog.index
 relay-log         = /var/log/mysql/relay/prod02-relay
