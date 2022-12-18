@@ -87,3 +87,14 @@ docker logs mysql-831
 docker exec -it mysql-831 bash
 mysql -u root -p
 ```
+
+### REMOVE MYSQL CONTAINER
+```sh
+docker container stop mysql-831
+docker ps
+docker ps -a
+docker container --help
+docker container rm --help
+docker container rm -fv mysql-831 
+```
+```
