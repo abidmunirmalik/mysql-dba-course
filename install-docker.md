@@ -81,3 +81,9 @@ docker container inspect mysql-831
 ```sh
 docker logs mysql-831
 ```
+
+### MYSQL CONTAINER HOST
+```sh
+docker exec -it mysql-831 bash
+mysql -u root -p
+```
