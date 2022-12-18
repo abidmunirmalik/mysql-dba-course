@@ -97,4 +97,8 @@ docker container --help
 docker container rm --help
 docker container rm -fv mysql-831 
 ```
+
+### EXPOSE CONTAINER PORT TO HOST
+```sh
+docker container run --name mysql-831 -e MYSQL_ROOT_PASSWORD=P@ssw0rd -d --publish 3306:3306 mysql:latest
 ```
