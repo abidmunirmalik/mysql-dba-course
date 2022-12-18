@@ -76,3 +76,8 @@ sudo netstat -ntlp | grep 3306 <-- No, why?
 ```sh
 docker container inspect mysql-831
 ```
+
+### MYSQL CONTAINER LOGS
+```sh
+docker logs mysql-831
+```
