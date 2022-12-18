@@ -5,6 +5,11 @@
 wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.31-1.el7.x86_64.rpm
 ```
 
+### INSTALL MYSQL SHELL 
+```sh
+sudo yum localinstall mysql-shell-8.0.31-1.el7.x86_64.rpm  -y
+```
+
 ### RUN CHECK FOR VERSION UPGRADE
 ```sh
  mysqlsh -- util check-for-server-upgrade root@localhost --target-version=8.0.30 --output-format=JSON --config-path=/etc/my.cnf
@@ -15,7 +20,7 @@ wget https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.0.31-1.el7.x8
 rpm -qa | grep -i percona
 ```
 
-### DOWNLOAD NEWER MINOR VERSION
+### DOWNLOAD NEWER MAJOR VERSION
 ```sh
 wget https://downloads.percona.com/downloads/Percona-Server-LATEST/Percona-Server-8.0.30-22/binary/redhat/7/x86_64/percona-server-shared-compat-8.0.30-22.1.el7.x86_64.rpm
 wget https://downloads.percona.com/downloads/Percona-Server-LATEST/Percona-Server-8.0.30-22/binary/redhat/7/x86_64/percona-server-shared-8.0.30-22.1.el7.x86_64.rpm
