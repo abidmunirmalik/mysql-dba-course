@@ -29,7 +29,7 @@ wget https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-X
 sudo percona-release setup -y ps80
 ```
 
-### SET MINOR VERSION VARIABLE
+### SET MAJOR VERSION VARIABLE
 ```sh
 VERSION=8.0.30-22.1
 echo $VERSION
@@ -40,7 +40,13 @@ echo $VERSION
 sudo systemctl stop mysqld
 ```
 
-### INSTALL NEW MINOR VERSION
+### REMOVE MYSQL 5.7
+```sh
+sudo yum remove Percona-Server-shared-compat-57-5.7.40-43.1.el7.x86_64 -y
+sudo yum remove Percona-Server-shared-57-5.7.40-43.1.el7.x86_64 -y
+```
+
+### INSTALL NEW MAJOR VERSION
 ```sh
 sudo yum localinstall percona-server-shared-compat-$VERSION.el7.x86_64.rpm
 sudo yum localinstall percona-server-shared-$VERSION.el7.x86_64.rpm
