@@ -48,11 +48,11 @@ sudo yum remove Percona-Server-shared-57-5.7.40-43.1.el7.x86_64 -y
 
 ### INSTALL NEW MAJOR VERSION
 ```sh
-sudo yum localinstall percona-server-shared-compat-$VERSION.el7.x86_64.rpm
-sudo yum localinstall percona-server-shared-$VERSION.el7.x86_64.rpm
-sudo yum localinstall percona-server-client-$VERSION.el7.x86_64.rpm
-sudo yum localinstall percona-server-server-$VERSION.el7.x86_64.rpm
-sudo yum localinstall percona-xtrabackup-80-8.0.30-23.1.el7.x86_64.rpm
+sudo yum localinstall percona-server-shared-compat-$VERSION.el7.x86_64.rpm -y
+sudo yum localinstall percona-server-shared-$VERSION.el7.x86_64.rpm -y
+sudo yum localinstall percona-server-client-$VERSION.el7.x86_64.rpm -y
+sudo yum localinstall percona-server-server-$VERSION.el7.x86_64.rpm -y
+sudo yum localinstall percona-xtrabackup-80-8.0.30-23.1.el7.x86_64.rpm -y
 ```
 
 ### VERIFY NEW RPM VERSION
