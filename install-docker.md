@@ -60,3 +60,19 @@ docker images
 docker inspect mysql
 ```
 
+### RUN MYSQL CONTAINER
+```sh
+docker run --name mysql-831 -e MYSQL_ROOT_PASSWORD=P@ssw0rd -d mysql:latest
+```
+
+### VERIFY IF MYSQL IS RUNNING AS CONTAINER
+```sh
+docker container ps
+pidof mysqld
+sudo netstat -ntlp | grep 3306 <-- No, why?
+```
+
+### INSPECT MYSQL CONTAINER
+```sh
+docker container inspect mysql-831
+```
