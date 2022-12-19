@@ -102,3 +102,10 @@ docker container rm -fv mysql-831
 ```sh
 docker container run --name mysql-831 -e MYSQL_ROOT_PASSWORD=P@ssw0rd -d --publish 3306:3306 mysql:latest
 ```
+
+### BIND LOCAL VOLUME
+```sh
+mkdir mysql-data
+docker run --name mysql-831 -e MYSQL_ROOT_PASSWORD=P@ssw0rd -d -p 3306:3306 -v /home/ec2-user/mysql-data:/var/lib/mysql mysql:latest
+ls -ltr mysql-data
+```
