@@ -15,3 +15,10 @@ DigitalOcean $200 Credit for 60 Days: https://m.do.co/c/8722350423f7
 9. Droplet-1 Name: primary & Droplet-2 Name: replica
 10. Create
 ```
+
+### DISABLE SELINUX & EDIT HOSTS FILE
+```
+1. Disable `selinux` on both primary & replica
+2. Edit the `/etc/hosts` file to add friendly DNS name of target host
+3. Reboot both Primary & Replica Server
+```
