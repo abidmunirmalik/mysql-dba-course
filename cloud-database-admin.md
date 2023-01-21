@@ -103,3 +103,16 @@ CPU: 1
 Public IP Address: Yes
 Name: cloud-replica
 ```
+
+### INSTALL NMAP & PV
+```sh
+yum -y install epel-release (Linux)
+yum -y install nmap-ncat pv tmux
+amazon-linux-extras install epel -y (Amazon Linux)
+yum -y install nmap-ncat pv tmux
+xtrabackup --version
+ncat --version
+pv --version
+tmux -V
+```
+
