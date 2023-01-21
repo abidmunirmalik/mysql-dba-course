@@ -58,3 +58,31 @@ systemctl start mysqld.service (Replica)
 mysql_config_editor set --user=bob --password (Replica)
 mysql
 ```
+
+### PREPARE FOR GTID-BASED REPLICATION
+```sh
+mkdir -p /var/log/mysql/binlogs
+chown -R mysql:mysql /var/log/mysql/binlogs
+
+vi /etc/my.cnf (Primary)
+log-bin                    = /var/log/mysql/binlogs/primary-binlog
+log-bin-index              = /var/log/mysql/binlogs/primary-binlog.index
+binlog-expire-logs-seconds = 432000
+server-id                  = 1
+gtid-mode.                 = ON
+enforce-gtid-consistency   = ON
+
+vi /etc/my.cnf (Replica)
+log-bin                    = /var/log/mysql/binlogs/replica-binlog
+log-bin-index              = /var/log/mysql/binlogs/replica-binlog.index
+binlog-expire-logs-seconds = 432000
+server-id                  = 2
+gtid-mode.                 = ON
+enforce-gtid-consistency   = ON
+```
+
+### SETUP GTID-BASED REPLICATION
+```sql
+CHANGE REPLICATION SOURCE TO SOURCE_HOST='primary.db.local', SOURCE_USER='replication_admin', SOURCE_PASSWORD='P@ssw0rd123', SOURCE_AUTO_POSITION=1;
+START REPLICA;
+```
