@@ -1,7 +1,7 @@
 ## CLOUD DATABASE ADMINISTRATION
 
 ### SETUP 2 VMs ON DIGITAL-OCEAN
-```sh
+```
 1. Create New Project called `MySQL`
 2. Create `Droplets`
 3. Region: New York (please choose that is closer to you)
