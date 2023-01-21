@@ -90,3 +90,16 @@ enforce-gtid-consistency   = ON
 CHANGE REPLICATION SOURCE TO SOURCE_HOST='primary.db.local', SOURCE_USER='replication_admin', SOURCE_PASSWORD='P@ssw0rd123', SOURCE_AUTO_POSITION=1;
 START REPLICA;
 ```
+
+### AWS REPLICA SETUP
+* Create EC2 on AWS as:
+```
+Security Group: mysql-sg with inbound rules:  3306(TCP) & 22(SSH)
+AMI-ID: ami-09d3b3274b6c5d4aa
+Key-Pair: mysql-dba-course
+Block Device: 8GB
+Instance Type: t2.micro
+CPU: 1
+Public IP Address: Yes
+Name: cloud-replica
+```
