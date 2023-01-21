@@ -120,7 +120,7 @@ tmux -V
 ```sh
 cd /var/lib/mysql (destination)
 ncat --recv-only --listen 3306  | pv | xbstream -x (destination)
-xtrabackup --backup --slave-info --stream=xbstream | ncat 54.166.25.150 3306 (source)
+xtrabackup --backup --slave-info --stream=xbstream | ncat destination_server 3306 (source)
 xtrabackup --prepare --target-dir=/var/lib/mysql (destination)
 vi /etc/my.cnf
 server-id = 3
