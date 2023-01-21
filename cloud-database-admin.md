@@ -116,3 +116,37 @@ pv --version
 tmux -V
 ```
 
+### ONLINE STREAM BACKUP DATA
+```sh
+cd /var/lib/mysql (destination)
+ncat --recv-only --listen 3306  | pv | xbstream -x (destination)
+xtrabackup --backup --slave-info --stream=xbstream | ncat 54.166.25.150 3306 (source)
+xtrabackup --prepare --target-dir=/var/lib/mysql (destination)
+vi /etc/my.cnf
+server-id = 3
+chown -R mysql:mysql /var/lib/mysql
+systemctl start mysqld
+mysql
+mysql -h 159.65.47.167 -u bob -p
+
+mkdir -p /var/log/mysql/binlogs
+chown -R mysql:mysql /var/log/mysql/binlogs
+
+vi /etc/my.cnf
+server-id                  = 30
+log-bin                    = /var/log/mysql/binlogs/cloud-replica-binlog
+log-bin-index              = /var/log/mysql/binlogs/cloud-replica-binlog.index
+binlog-expire-logs-seconds = 432000
+gtid-mode                  = ON
+enforce-gtid-consistency   = ON
+report-host                = cloud-replica.db.local
+
+systemctl stop mysqld.service && systemctl start mysqld.service
+mysql
+SET GLOBAL gtid_purged='d10df700-993f-11ed-b8b1-5e2741d17760:1-11';
+STOP REPLICA;
+RESET REPLICA ALL;
+CHANGE REPLICATION SOURCE TO SOURCE_HOST='159.65.47.167', SOURCE_USER='replication_admin', SOURCE_PASSWORD='P@ssw0rd123', SOURCE_AUTO_POSITION=1;
+START REPLICA;
+SHOW REPLICA STATUS\G
+```
