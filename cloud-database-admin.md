@@ -36,8 +36,8 @@ mysql --host=localhost --user=root --password
 
 ### CREATE DBA & REPLICATION ADMIN USERS - PRIMARY ONLY
 ```sql
-CREATE USER IF NOT EXISTS bob IDENTIFIED WITH mysql_native_password BY 'P@ssw0rd123';
-CREATE USER IF NOT EXISTS replication_admin IDENTIFIED WITH mysql_native_password BY 'P@ssw0rd123';
+CREATE USER IF NOT EXISTS bob IDENTIFIED WITH mysql_native_password BY 'XXXXX';
+CREATE USER IF NOT EXISTS replication_admin IDENTIFIED WITH mysql_native_password BY 'XXXXX';
 GRANT ALL PRIVILEGES ON *.* TO bob WITH GRANT OPTION;
 GRANT REPLICATION SLAVE ON *.* TO replication_admin;
 FLUSH PRIVILEGES;
@@ -87,7 +87,7 @@ enforce-gtid-consistency   = ON
 
 ### SETUP GTID-BASED REPLICATION
 ```sql
-CHANGE REPLICATION SOURCE TO SOURCE_HOST='primary.db.local', SOURCE_USER='replication_admin', SOURCE_PASSWORD='P@ssw0rd123', SOURCE_AUTO_POSITION=1;
+CHANGE REPLICATION SOURCE TO SOURCE_HOST='primary.db.local', SOURCE_USER='replication_admin', SOURCE_PASSWORD='XXXXX', SOURCE_AUTO_POSITION=1;
 START REPLICA;
 ```
 
@@ -127,7 +127,7 @@ server-id = 3
 chown -R mysql:mysql /var/lib/mysql
 systemctl start mysqld
 mysql
-mysql -h 159.65.47.167 -u bob -p
+mysql -h primary.db.local -u bob -p
 
 mkdir -p /var/log/mysql/binlogs
 chown -R mysql:mysql /var/log/mysql/binlogs
@@ -146,7 +146,7 @@ mysql
 SET GLOBAL gtid_purged='d10df700-993f-11ed-b8b1-5e2741d17760:1-11';
 STOP REPLICA;
 RESET REPLICA ALL;
-CHANGE REPLICATION SOURCE TO SOURCE_HOST='159.65.47.167', SOURCE_USER='replication_admin', SOURCE_PASSWORD='P@ssw0rd123', SOURCE_AUTO_POSITION=1;
+CHANGE REPLICATION SOURCE TO SOURCE_HOST='primary.db.local', SOURCE_USER='replication_admin', SOURCE_PASSWORD='XXXXX', SOURCE_AUTO_POSITION=1;
 START REPLICA;
 SHOW REPLICA STATUS\G
 ```
