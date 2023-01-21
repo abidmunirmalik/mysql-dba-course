@@ -22,3 +22,6 @@ DigitalOcean $200 Credit for 60 Days: https://m.do.co/c/8722350423f7
 2. Edit the `/etc/hosts` file to add friendly DNS name of target host
 3. Reboot both Primary & Replica Server
 ```
+
+### INSTALL MYSQL SERVER
+https://github.com/abidmunirmalik/mysql-dba-course/blob/main/specific-version.md
