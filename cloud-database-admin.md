@@ -1,5 +1,7 @@
 ## CLOUD DATABASE ADMINISTRATION
 
+DigitalOcean $200 Credit for 60 Days: https://m.do.co/c/8722350423f7
+
 ### SETUP 2 VMs ON DIGITAL-OCEAN
 ```
 1. Create New Project called `MySQL`
