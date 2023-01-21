@@ -47,3 +47,14 @@ FLUSH PRIVILEGES;
 ```sh
 mysql_config_editor set --user=bob --password
 ```
+
+### COPY BACKUP FROM PRIMARY TO REPLICA
+```sh
+systemctl stop mysqld.service
+rm -rf /var/lib/mysql/* (Replica)
+scp -r /var/lib/mysql/* root@replica.db.local:/var/lib/mysql/ (Primary)
+chown -R mysql:mysql /var/lib/mysql (Replica)
+systemctl start mysqld.service (Replica)
+mysql_config_editor set --user=bob --password (Replica)
+mysql
+```
