@@ -23,7 +23,7 @@ log-slow-admin-statements
 log-slow-extra
 log-slow-replica-statements (Only Replica)
 slow-query-log-file = /var/log/mysql/slow-logs/slow-logs.log
-long_query_time = 1
+long-query-time = 1
 ```
 
 ### Restart MySQL Service
