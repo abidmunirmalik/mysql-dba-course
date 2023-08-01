@@ -30,7 +30,7 @@ sudo ls -l /var/lib/mysql/innodb
 ```
 
 ### VERIFY SQL
-```sh
+```sql
 SHOW GLOBAL VARIABLES LIKE 'innodb_undo%';
-select * from information_schema.files where tablespace_name like '%undo%';\G
+select * from information_schema.files where tablespace_name like '%undo%'\G
 ```
