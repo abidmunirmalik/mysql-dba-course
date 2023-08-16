@@ -14,7 +14,7 @@ STEP 3. INSTALL MYSQL SERVER IF NOT INSTALLED
 ```sh
 sudo apt list --installed | grep -i mysql-server
 sudo apt list | grep -i mysql-server
-sudo apt install mysql-server
+sudo apt install mysql-server-8.0
 ```
 
 STEP 4. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
