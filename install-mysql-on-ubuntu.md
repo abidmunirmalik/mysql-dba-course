@@ -10,27 +10,22 @@ STEP 2. RUN UPDATES
 sudo apt update
 ```
 
-STEP 3. INSTALL MYSQL SERVER PACKAGE
-```sh
-sudo apt install -y mysql-server
-```
-
-STEP 4. INSTALL MYSQL SERVER
+STEP 3. INSTALL MYSQL SERVER
 ```sh
 sudo yum install mysql-community-server
 ```
 
-STEP 5. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
+STEP 4. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
 ```sh
 sudo systemctl enable mysql.service
 ```
 
-STEP 6. START MYSQL SERVICE
+STEP 5. START MYSQL SERVICE
 ```sh
 sudo systemctl start mysql.service
 ```
 
-STEP 7. CHECK STATUS OF MYSQL SERVICE
+STEP 6. CHECK STATUS OF MYSQL SERVICE
 ```sh
 systemctl status mysql.service
 ```
