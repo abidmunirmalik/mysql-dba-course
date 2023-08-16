@@ -5,14 +5,16 @@ STEP 1. VERIFY OS VERSION
 lsb_release -a
 ```
 
-STEP 2. RUN UPDATES 
+STEP 2. RUN UPDATES & UPGRADES
 ```sh
-sudo apt update
+sudo apt update && sudo apt upgrade
 ```
 
-STEP 3. INSTALL MYSQL SERVER
+STEP 3. INSTALL MYSQL SERVER IF NOT INSTALLED
 ```sh
-sudo apt install mysql-community-server
+sudo apt list --installed | grep -i mysql-server
+sudo apt list | grep -i mysql-server
+sudo apt install mysql-server
 ```
 
 STEP 4. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
