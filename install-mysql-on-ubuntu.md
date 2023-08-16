@@ -12,7 +12,7 @@ sudo apt update
 
 STEP 3. INSTALL MYSQL SERVER
 ```sh
-sudo yum install mysql-community-server
+sudo apt install mysql-community-server
 ```
 
 STEP 4. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
