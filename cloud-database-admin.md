@@ -74,14 +74,14 @@ vi /etc/my.cnf (Primary)
 log-bin                    = /var/log/mysql/binlogs/primary-binlog
 log-bin-index              = /var/log/mysql/binlogs/primary-binlog.index
 binlog-expire-logs-seconds = 432000
-gtid-mode.                 = ON
+gtid-mode                  = ON
 enforce-gtid-consistency   = ON
 
 vi /etc/my.cnf (Replica)
 log-bin                    = /var/log/mysql/binlogs/replica-binlog
 log-bin-index              = /var/log/mysql/binlogs/replica-binlog.index
 binlog-expire-logs-seconds = 432000
-gtid-mode.                 = ON
+gtid-mode                  = ON
 enforce-gtid-consistency   = ON
 ```
 
