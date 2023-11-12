@@ -150,3 +150,7 @@ CHANGE REPLICATION SOURCE TO SOURCE_HOST='primary.db.local', SOURCE_USER='replic
 START REPLICA;
 SHOW REPLICA STATUS\G
 ```
+**Note:** On EC2, add an entry in `/etc/hosts` for `primary.db.local` to reflect it's public ip address as:
+```sh
+123.345.567.789  primary.db.local
+```
