@@ -105,40 +105,39 @@ ssh -i ~/.ssh/mysql-dba-course.pem ec2-user@3.82.66.171
 
 STEP 5. DOWNLOAD MYSQL 8 REPOSITORY PACKAGE
 ```sh
-wget https://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
+cat /etc/os-release
+cd /tmp
+wget https://repo.mysql.com/mysql80-community-release-el9-5.noarch.rpm
 ```
 
 STEP 6. INSTALL MYSQL REPO LOCALLY
 ```sh
-sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm
+sudo yum localinstall mysql80-community-release-el9-5.noarch.rpm
 ```
 
-STEP 7. Import Public Key for MySQL 8
+
+STEP 7. INSTALL MYSQL SERVER
 ```sh
-sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+sudo yum search mysql-community-server
+sudo yum info mysql-community-server.x86_64
 ```
 
-STEP 8. INSTALL MYSQL SERVER
-```sh
-sudo yum install mysql-community-server
-```
-
-STEP 9. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
+STEP 8. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
 ```sh
 sudo systemctl enable mysqld.service
 ```
 
-STEP 10. START MYSQL SERVICE
+STEP 9. START MYSQL SERVICE
 ```sh
 sudo systemctl start mysqld.service
 ```
 
-STEP 11. CHECK STATUS OF MYSQL SERVICE
+STEP 10. CHECK STATUS OF MYSQL SERVICE
 ```sh
 systemctl status mysqld
 ```
 
-STEP 12. VERIFICATION
+STEP 11. VERIFICATION
 ```sh
 pidof mysqld
 netstat -ntlp | grep 3306
