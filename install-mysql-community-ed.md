@@ -120,6 +120,7 @@ STEP 7. INSTALL MYSQL SERVER
 ```sh
 sudo yum search mysql-community-server
 sudo yum info mysql-community-server.x86_64
+sudo yum install mysql-community-server.x86_64
 ```
 
 STEP 8. ENABLE MYSQL SERVICE TO AUTO-START ON REBOOT
